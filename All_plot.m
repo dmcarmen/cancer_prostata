@@ -31,10 +31,10 @@ function [] = All_plot(dias_con, dias_sin, t_fin)
     %[T, Y] = ode15s(S, [t_ini:h:t_fin], Var0);
     figure(1)
     plot(T,Y);
-    legend('Q_1: cuota celular de AD', 'Q_2: cuota celular de AI', 'X_1: células AD', 'X_2: células AI', 'PSA');
-    %lgd = legend({'Q_1: cuota celular de AD', 'Q_2: cuota celular de AI', 'X_1: células AD', 'X_2: células AI', 'PSA'}, 'Location','northwest');
+    legend('Q_1: cuota celular de AD', 'Q_2: cuota celular de AI', 'X_1: celulas AD', 'X_2: celulas AI', 'PSA');
+    %lgd = legend({'Q_1: cuota celular de AD', 'Q_2: cuota celular de AI', 'X_1: celulas AD', 'X_2: celulas AI', 'PSA'}, 'Location','northwest');
     %lgd.NumColumns = 2;
-    title('Solución utilizando ode45', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
+    title('Solucion utilizando ode45', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
     xlabel('Tiempo (dias)')
 
     % Grafica usando mi funcion de Euler explicito.
@@ -43,14 +43,14 @@ function [] = All_plot(dias_con, dias_sin, t_fin)
     figure(2)
     plot(T,y(5,:)) % PSA
     legend('PSA')
-    title('Solución utilizando función de Euler propia', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
+    title('Solucion utilizando funcion de Euler propia', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
     xlabel('Tiempo (dias)')
 
     % Grafica cone el error entre ambos metodos
     figure(3)
     plot(T,abs(Y-y')) % error entre ambos metodos
     legend('Error Q_1', 'Error Q_2', 'Error X_1', 'Error X_2', 'Error PSA')
-    title('Error entre ode45 y función de Euler propia', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
+    title('Error entre ode45 y funcion de Euler propia', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
     xlabel('Tiempo (dias)')
 
     %plot(t, y(i,:)); plot una sola variable en este orden Q1, Q2, X1, X2, P
