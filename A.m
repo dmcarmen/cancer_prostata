@@ -21,10 +21,10 @@ function  [val]=A(t, dias_con, dias_sin)
         %gamma double = 0.08     %androgen clearance rate
     end
 
-    a0 = 20;
+    a0 = 15;
     gamma = 0.08;
 
-    ini0 = a0;  %constante inicial
+    ini0 = a0-0.5;  %constante inicial
     tf1 = 0;    %tiempo inicial
 
     % Bucle hasta encontrar si t esta en un periodo de tratamiento o
@@ -32,11 +32,11 @@ function  [val]=A(t, dias_con, dias_sin)
     while true
         tf2 = tf1+dias_con; %tiempo al terminar tratamiento
         tf3 = tf2+dias_sin; %tiempo al terminar descanso
-        b = ini0*exp(-gamma*(tf2-tf1)); %valor de A al terminar tratamiento
+        b = ini0*exp(-gamma*(tf2-tf1))+1; %valor de A al terminar tratamiento
         
         if (t >= tf1) && (t < tf2)
             % de tf1 a tf2 con tratamiento
-            val = ini0*exp(-gamma*(t-tf1));
+            val = ini0*exp(-gamma*(t-tf1))+0.5;
             break
         end
         if (t >=tf2) && (t < tf3)
@@ -45,7 +45,7 @@ function  [val]=A(t, dias_con, dias_sin)
             break
         end
         
-        ini0 = b*exp(-gamma*(tf3-tf1))+a0;  %valor de A al terminar descanso
+        ini0 = b*exp(-gamma*(tf3-tf1))+a0-0.5;  %valor de A al terminar descanso
         tf1 = tf3;  %nuevo tiempo inicial de nueva ronda tratamiento-descanso
     end
 end

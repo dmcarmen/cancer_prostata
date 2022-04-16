@@ -7,9 +7,9 @@ function [] = All_plot(dias_con, dias_sin, t_fin)
     %    Por defecto 60 dias.
     %   t_fin: tiempo en dias de fin del plot. Por defecto 500.
     arguments
-        dias_con double = 60    %dias de tratamiento
-        dias_sin double = 60    %dias sin tratamiento
-        t_fin double = 500
+        dias_con double = 190    %dias de tratamiento
+        dias_sin double = 190    %dias sin tratamiento
+        t_fin double = 1000
     end
 
     close all
@@ -48,7 +48,7 @@ function [] = All_plot(dias_con, dias_sin, t_fin)
 
     % Grafica cone el error entre ambos metodos
     figure(3)
-    plot(T,abs(Y-y')) % error entre ambos metodos
+    semilogy(T,abs(Y-y')) % error entre ambos metodos
     legend('Error Q_1', 'Error Q_2', 'Error X_1', 'Error X_2', 'Error PSA')
     title('Error entre ode45 y funcion de Euler propia', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
     xlabel('Tiempo (dias)')
@@ -57,5 +57,25 @@ function [] = All_plot(dias_con, dias_sin, t_fin)
     %plot(t, y(1:2,:)) ;plot Qis
     %plot(t, y(3:4,:)) ;plot Xis
     %plot(t, y(5,:)) ;plot P
-    
+
+    figure(4)
+    plot(T,Y(:,3:4))
+    legend('X_1: celulas AD', 'X_2: celulas AI');
+    title('Solucion utilizando ode45', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
+    xlabel('Tiempo (dias)')
+
+    figure(5)
+    for i = 1:length(T)
+        and(i) = A(T(i), dias_con, dias_sin);
+    end
+    plot(T,and)
+    legend('A: andrógeno');
+    title('Andrógeno ', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
+    xlabel('Tiempo (dias)')
+
+%     figure(6)
+%     plot(T,Y(:,1:2))
+%     legend('Q_1: cuota celular de AD', 'Q_2: cuota celular de AI');
+%     title('Solucion utilizando ode45', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
+%     xlabel('Tiempo (dias)')
 end
