@@ -69,8 +69,8 @@ function [] = All_plot(dias_con, dias_sin, t_fin)
         and(i) = A(T(i), dias_con, dias_sin);
     end
     plot(T,and)
-    legend('A: andrógeno');
-    title('Andrógeno ', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
+    legend('A: androgeno');
+    title('Androgeno ', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
     xlabel('Tiempo (dias)')
 
 %     figure(6)
