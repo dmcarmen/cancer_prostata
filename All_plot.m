@@ -61,40 +61,15 @@ function [] = All_plot(dias_con, dias_sin, t_fin)
     title('Solucion utilizando funcion de Euler propia', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
     xlabel('Tiempo (dias)')
 
-    %% Graficas comparando resultados
-    % Q1 y Q2.
-    figure(5)
-    plot(T,y(1:2,:));
-    hold on
-    plot(T,Y(:,1:2));
-    legend('Q_1: cuota celular de AD ode45', 'Q_2: cuota celular de AI  ode45', ...
-        'Q_1: cuota celular de AD Euler', 'Q_2: cuota celular de AI Euler');
-    %lgd = legend({'Q_1: cuota celular de AD', 'Q_2: cuota celular de AI', 'X_1: celulas AD', 'X_2: celulas AI', 'PSA'}, 'Location','northwest');
-    %lgd.NumColumns = 2;
-    title('Solucion utilizando ambos metodos', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
-    xlabel('Tiempo (dias)')
-    hold off
-
-    % X1, X2 y PSA.
-    figure(6)
-    plot(T, y(3:5,:))
-    hold on
-    plot(T,Y(:,3:5))
-    legend('X_1: celulas AD ode45', 'X_2: celulas AI ode45', 'PSA ode45', ...
-        'X_1: celulas AD Euler', 'X_2: celulas AI Euler', 'PSA Euler');
-    title('Solucion utilizando ambos metodos', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
-    xlabel('Tiempo (dias)')
-    hold off
-
     %% Grafica con el error entre ambos metodos
-    figure(7)
+    figure(5)
     semilogy(T,abs(Y-y')) % error absoluto entre ambos metodos
     legend('Error Q_1', 'Error Q_2', 'Error X_1', 'Error X_2', 'Error PSA')
     title('Semilogy Error entre ode45 y funcion de Euler propia', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
     xlabel('Tiempo (dias)')
 
     %% Grafica del androgeno
-    figure(8)
+    figure(6)
     for i = 1:length(T)
         and(i) = A(T(i), dias_con, dias_sin);
     end
