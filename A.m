@@ -22,7 +22,7 @@ function  [val]=A(t, dias_con, dias_sin)
     end
 
     a_min = 0.5;
-    a0 = 15;
+    a0 = 14.5;
     gamma = 0.08;
 
     ini0 = a0-a_min;  %constante inicial

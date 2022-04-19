@@ -51,14 +51,14 @@ function [] = All_plot(dias_con, dias_sin, t_fin)
     figure(3)
     plot(T,y(1:2,:)) 
     legend('Q_1: cuota celular de AD', 'Q_2: cuota celular de AI')
-    title('Solucion utilizando funcion de Euler propia', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
+    title('Solucion utilizando el metodo de Euler', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
     xlabel('Tiempo (dias)')
     
     % X_1, X_2 y PSA.
     figure(4)
     plot(T,y(3:5,:)) 
     legend('X_1: celulas AD', 'X_2: celulas AI', 'PSA')
-    title('Solucion utilizando funcion de Euler propia', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
+    title('Solucion utilizando el metodo de Euler', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
     xlabel('Tiempo (dias)')
 
     %% Grafica con el error entre ambos metodos
