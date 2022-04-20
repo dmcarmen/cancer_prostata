@@ -38,6 +38,7 @@ function [] = All_plot(dias_con, dias_sin, t_fin)
     %lgd.NumColumns = 2;
     title('Solucion utilizando ode45', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
     xlabel('Tiempo (dias)')
+    saveas(1,['imgs/' num2str(dias_con) '_' num2str(dias_sin) '_' num2str(t_fin) '_Qs_ode45.png'])
 
     % X1, X2 y PSA.
     figure(2)
@@ -45,6 +46,7 @@ function [] = All_plot(dias_con, dias_sin, t_fin)
     legend('X_1: celulas AD', 'X_2: celulas AI', 'PSA');
     title('Solucion utilizando ode45', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
     xlabel('Tiempo (dias)')
+    saveas(2,['imgs/' num2str(dias_con) '_' num2str(dias_sin) '_' num2str(t_fin) '_Xs_PSA_ode45.png'])
 
     %% Graficas usando mi funcion de Euler explicito. 
     % Q_1 y Q_2.
@@ -53,6 +55,7 @@ function [] = All_plot(dias_con, dias_sin, t_fin)
     legend('Q_1: cuota celular de AD', 'Q_2: cuota celular de AI')
     title('Solucion utilizando el metodo de Euler', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
     xlabel('Tiempo (dias)')
+    saveas(3,['imgs/' num2str(dias_con) '_' num2str(dias_sin) '_' num2str(t_fin) '_Qs_Euler.png'])
     
     % X_1, X_2 y PSA.
     figure(4)
@@ -60,6 +63,7 @@ function [] = All_plot(dias_con, dias_sin, t_fin)
     legend('X_1: celulas AD', 'X_2: celulas AI', 'PSA')
     title('Solucion utilizando el metodo de Euler', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
     xlabel('Tiempo (dias)')
+    saveas(4,['imgs/' num2str(dias_con) '_' num2str(dias_sin) '_' num2str(t_fin) '_Xs_PSA_Euler.png'])
 
     %% Grafica con el error entre ambos metodos
     figure(5)
@@ -67,6 +71,7 @@ function [] = All_plot(dias_con, dias_sin, t_fin)
     legend('Error Q_1', 'Error Q_2', 'Error X_1', 'Error X_2', 'Error PSA')
     title('Semilogy Error entre ode45 y funcion de Euler propia', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
     xlabel('Tiempo (dias)')
+    saveas(5,['imgs/' num2str(dias_con) '_' num2str(dias_sin) '_' num2str(t_fin) '_error.png'])
 
     %% Grafica del androgeno
     figure(6)
@@ -77,4 +82,5 @@ function [] = All_plot(dias_con, dias_sin, t_fin)
     legend('A: androgeno');
     title('Androgeno ', ['con ' num2str(dias_con) ' dias con tratamiento y ' num2str(dias_sin) ' dias sin tratamiento'])
     xlabel('Tiempo (dias)')
+    saveas(6,['imgs/' num2str(dias_con) '_' num2str(dias_sin) '_' num2str(t_fin) '_androgeno.png'])
 end
