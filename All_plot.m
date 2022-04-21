@@ -24,7 +24,7 @@ function [] = All_plot(dias_con, dias_sin, t_fin)
 
     %% Ecuaciones diferenciale, division y calculo.
     S = @(t,y) dAlldt(t,y,dias_con, dias_sin);
-    h=10e-3;
+    h=1e-2;
 
     [T, Y] = ode45(S, t_ini:h:t_fin, Var0);
     [~, y] = mi_euler(S, t_ini, t_fin, Var0, h);
