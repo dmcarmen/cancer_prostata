@@ -1,8 +1,8 @@
 function [] = androgeno_plot(dias_con, dias_sin, t_fin)
     arguments
-        dias_con double = 180    %dias de tratamiento
-        dias_sin double = 180    %dias sin tratamiento
-        t_fin double = 1500
+        dias_con double = 200    %dias de tratamiento
+        dias_sin double = 200    %dias sin tratamiento
+        t_fin double = 1800
     end
 
     close all

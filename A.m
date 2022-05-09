@@ -6,27 +6,23 @@ function  [val]=A(t, dias_con, dias_sin)
     % Params:
     %   t: tiempo en el que calcular el valor de A(t)
     %   dias_con: dias con tratamiento de supresion androgeno. Opcional, 
-    %    por defecto 60 dias.
+    %    por defecto 200 dias.
     %   dias_sin: dias de descanso del tratamiento de supresion androgeno. 
-    %    Opcional, por defecto 60 dias.
-    %   a0: normal androgen concentration. Por defecto 20.
-    %   gamma: androgen clearance rate. Por defecto 0.08
+    %    Opcional, por defecto 200 dias.
     % return:
     %   val: valor de A(t).
     arguments
         t double
-        dias_con double = 60    %dias de tratamiento
-        dias_sin double = 60    %dias sin tratamiento
-        %a0 double = 20          %normal androgen concentration
-        %gamma double = 0.08     %androgen clearance rate
+        dias_con double = 200    %dias de tratamiento
+        dias_sin double = 200    %dias sin tratamiento
     end
 
     a_min = 0.5;
-    a0 = 14.5;
-    gamma = 0.08;
+    a0 = 14.5;      %normal androgen concentration
+    gamma = 0.08;   %androgen clearance rate
 
-    ini0 = a0-a_min;  %constante inicial
-    tf1 = 0;    %tiempo inicial
+    ini0 = a0-a_min;    %constante inicial
+    tf1 = 0;            %tiempo inicial
     val = 0;
 
     % Bucle hasta encontrar si t esta en un periodo de tratamiento o

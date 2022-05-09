@@ -14,19 +14,20 @@ function dydt = dAlldt(t,y, dias_con, dias_sin)
     qm = 5;
     vh = 4;
     b = 0.09;
-    qmin = [0.363 0.153]; %caso1 
-    mum = 0.027;          %caso1
+    qmin = [0.363 0.153]; 
+    mum = 0.027;
 
     % Parametros para dXi/dt
-    %qmin = [0.363 0.153]; %caso1 
-    %mum = 0.027;          %caso1
-    d = [0.016 0.017];    %caso1
+    %qmin = [0.363 0.153];
+    %mum = 0.027;
+    d = [0.016 0.017];
 
     % Parametros para dP/dt
-    sigma = [0.02 0.28 0.34]; %caso 1
+    sigma = [0.02 0.28 0.34];
     delta = 0.08;
     rho = [1.3 1.1];
     
+    % Inicializamos el vector de ecuaciones diferenciales
     dydt = zeros(5,1);
     
     %dydt(1) = dQ1/dt, y(1) = Q1.
