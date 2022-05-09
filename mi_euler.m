@@ -7,8 +7,7 @@ function  [t, y] = mi_euler(f,t0,T,y0,h)
     %   y0: Y(t0)=y0, vector con el valor inicial. 
     %   h: tamanio de las particionnes de en el intervalo [t0,T].
     % return:
-    %   t: los ts donde se ha evaluado la funcion 
-    %      (es decir, [t0,T] dividido en N pasos).
+    %   t: los ts donde se ha evaluado la funcion (es decir, [t0,T] dividido en N pasos).
     %   y: la matriz solucion.
 
     N=(T-t0)/h;     % Numero de divisiones
