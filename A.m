@@ -5,12 +5,11 @@ function  [val]=A(t, dias_con, dias_sin)
     % (supplementary).
     % Params:
     %   t: tiempo en el que calcular el valor de A(t)
-    %   dias_con: dias con tratamiento de supresion androgeno. Opcional, 
-    %    por defecto 200 dias.
-    %   dias_sin: dias de descanso del tratamiento de supresion androgeno. 
-    %    Opcional, por defecto 200 dias.
+    %   dias_con: dias con tratamiento de supresion androgeno. Opcional, por defecto 200 dias.
+    %   dias_sin: dias de descanso del tratamiento de supresion androgeno. Opcional, por defecto 200 dias.
     % return:
     %   val: valor de A(t).
+    
     arguments
         t double
         dias_con double = 200    %dias de tratamiento
