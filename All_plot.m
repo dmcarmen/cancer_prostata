@@ -1,10 +1,8 @@
 function [] = All_plot(dias_con, dias_sin, t_fin)
     %ALL_PLOT Grafica con las 5 EDOs.
     % Param:
-    %   dias_con: dias con tratamiento de supresion androgeno. Por defecto
-    %    200 dias.
-    %   dias_sin: dias de descanso del tratamiento de supresion androgeno. 
-    %    Por defecto 200 dias.
+    %   dias_con: dias con tratamiento de supresion androgeno. Por defecto 200 dias.
+    %   dias_sin: dias de descanso del tratamiento de supresion androgeno. Por defecto 200 dias.
     %   t_fin: tiempo en dias de fin del plot. Por defecto 1800.
     arguments
         dias_con double = 200    %dias de tratamiento

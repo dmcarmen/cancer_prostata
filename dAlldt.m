@@ -6,8 +6,7 @@ function dydt = dAlldt(t,y, dias_con, dias_sin)
     %   dias_con: dias con tratamiento de supresion androgeno.
     %   dias_sin: dias de descanso del tratamiento de supresion androgeno. 
     % return:
-    %   dydt: vector con las ecuaciones dQ1/dt, dQ2/dt, dX1/dt, dX2/dt y 
-    %         dP/dt.
+    %   dydt: vector con las ecuaciones dQ1/dt, dQ2/dt, dX1/dt, dX2/dt y dP/dt.
     
     % Parametros para dQi/dt
     vm = 0.27;
