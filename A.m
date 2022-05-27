@@ -1,8 +1,6 @@
 function  [val]=A(t, dias_con, dias_sin)
     %ANDROGENO funcion que modela el cambio de androgeno. 
-    % Comienza con una fase de tratamiento, seguida de una fase de descanso
-    % indefinidamente. Modelada por la solucion de la EDO en Ideta model 
-    % (supplementary).
+    % Comienza con una fase de tratamiento, seguida de una fase de descanso indefinidamente. Modelada por la solucion de la EDO en Ideta model.
     % Params:
     %   t: tiempo en el que calcular el valor de A(t)
     %   dias_con: dias con tratamiento de supresion androgeno. Opcional, por defecto 200 dias.
@@ -24,8 +22,7 @@ function  [val]=A(t, dias_con, dias_sin)
     tf1 = 0;            %tiempo inicial
     val = 0;
 
-    % Bucle hasta encontrar si t esta en un periodo de tratamiento o
-    % descanso y calcular el valor de A teniendo eso en cuenta.
+    % Bucle hasta encontrar si t esta en un periodo de tratamiento o descanso y calcular el valor de A teniendo eso en cuenta.
     while true
         tf2 = tf1+dias_con; %tiempo al terminar tratamiento
         tf3 = tf2+dias_sin; %tiempo al terminar descanso
