@@ -1,7 +1,7 @@
 function dydt = dAlldt(t,y, dias_con, dias_sin)
     %dAlldt Devuelve el sistema de EDOs. 
     % Params:
-    %   t: escalar t de la que dependen las funciones.
+    %   t: escalar t del que dependen las funciones.
     %   y: vector de las propias funciones (Q1, Q2, X1, X2 y P).
     %   dias_con: dias con tratamiento de supresion androgeno.
     %   dias_sin: dias de descanso del tratamiento de supresion androgeno. 
