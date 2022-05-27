@@ -1,7 +1,6 @@
 function [res] = lambda2(q)
-    %LAMBDA1 Funcion lambda para el segundo par de variables. 
-    % Representalos ratios de transicion debido a mutaciones de las celulas 
-    % de X2 (AI) las de X1 (AD).
+    %LAMBDA2 Funcion lambda para el segundo par de variables. 
+    % Representalos ratios de transicion debido a mutaciones de las celulas de X2 (AI) las de X1 (AD).
     % Params:
     %   q: valor de Q(t).
     % return:
